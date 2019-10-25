@@ -1,0 +1,15 @@
+<div *ngIf="article">
+<p>
+    {{article.title}}
+</p>
+<p>
+    {{article.content}}
+</p>
+</div>
+
+<br> <br> <br>
+
+<div class="edit" *ngIf="article">
+    <a routerLink="/edit/{{article._id}}">Edit article</a>
+    <a href="#" (click)="deleteArticle(article._id)">Delete article</a>
+</div>

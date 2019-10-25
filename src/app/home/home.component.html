@@ -1,0 +1,9 @@
+<div *ngFor="let article of articles">
+    <div class="title">
+        <a routerLink="/articles/{{article._id}}">{{article.title}}</a>
+    </div>
+
+    <div class="content">
+        {{article.content | slice: 0:330}}
+    </div>
+</div>

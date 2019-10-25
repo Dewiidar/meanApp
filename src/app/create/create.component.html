@@ -1,0 +1,18 @@
+<form [formGroup]="articleForm" (ngSubmit)="addArticle(article, articleForm.value)" *ngIf="articleForm">
+
+    <label for="title">Article title</label>
+    <input id="title" type="text" name="title" [formControl]="articleForm.controls.title" formControlName="title">
+    <div class="error" *ngIf="!articleForm.controls.title.valid && articleForm.controls.title.touched">
+        Specify a title (10:50 chars)
+    </div>
+
+    <label for="content">Article content</label>
+    <textarea id="content" name="content" [formControl]="articleForm.controls.content"
+              formControlName="title"></textarea>
+    <div class="error" *ngIf="!articleForm.controls.content.valid && articleForm.controls.content.touched">
+        Specify a content (10:50 chars)
+    </div>
+
+    <input type="submit" value="post article" [disabled]="!articleForm.valid">
+
+</form>
